@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
+import streamlit as st
 
 
 
@@ -144,10 +145,10 @@ if st.checkbox('afficher les nouvelles valeurs'):
 #calcul de la correlation
 corr = df.corr();
 
-##if st.checkbox('afficher la hitmap sur la correlation '):
-##    fig, ax = plt.subplots(figsize=(20,10))
-##    ax = sb.heatmap(corr, annot=True, ax =ax)
-##    st.pyplot(fig)
+if st.checkbox('afficher la hitmap sur la correlation '):
+    fig, ax = plt.subplots(figsize=(20,10))
+    ax = sb.heatmap(corr, annot=True, ax =ax)
+    st.pyplot(fig)
     
 if st.checkbox('afficher le calcul de correlation'):
     st.write(corr)
