@@ -5,12 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-import streamlit as st
-
-
-
 st.title('study of the transfer market for the 2017-2018 year')
-
+my_bar = st.progress(0)
 
 @st.cache
 def load_data(data):
@@ -152,4 +148,3 @@ if st.checkbox('afficher la hitmap sur la correlation '):
     
 if st.checkbox('afficher le calcul de correlation'):
     st.write(corr)
-
