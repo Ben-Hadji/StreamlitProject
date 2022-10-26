@@ -11,3 +11,4 @@ streamlit
 widgetsnbextension
 xlsxwriter
 pytest
+time

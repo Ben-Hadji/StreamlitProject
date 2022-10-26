@@ -5,23 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-import streamlit as st
-
-st.session_state['answer'] = ''
 
 
-realans = ['', 'abc', 'edf']
-
-if  st.session_state['answer'] in realans:
-    answerStat = "correct"
-elif st.session_state['answer'] not in realans:
-    answerStat = "incorrect"
-
-st.write(st.session_state)
-st.write(answerStat)
 
 st.title('study of the transfer market for the 2017-2018 year')
-my_bar = st.progress(0)
+
 
 @st.cache
 def load_data(data):
@@ -156,10 +144,10 @@ if st.checkbox('afficher les nouvelles valeurs'):
 #calcul de la correlation
 corr = df.corr();
 
-if st.checkbox('afficher la hitmap sur la correlation '):
-    fig, ax = plt.subplots(figsize=(20,10))
-    ax = sb.heatmap(corr, annot=True, ax =ax)
-    st.pyplot(fig)
+##if st.checkbox('afficher la hitmap sur la correlation '):
+##    fig, ax = plt.subplots(figsize=(20,10))
+##    ax = sb.heatmap(corr, annot=True, ax =ax)
+##    st.pyplot(fig)
     
 if st.checkbox('afficher le calcul de correlation'):
     st.write(corr)
